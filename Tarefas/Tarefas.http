@@ -1,0 +1,96 @@
+@Tarefas_HostAddress = http://localhost:5251
+
+### Listar Tarefas
+GET {{Tarefas_HostAddress}}/api/tarefa
+Accept: application/json
+
+### Listar uma Tarefa
+GET {{Tarefas_HostAddress}}/api/tarefa/3
+Accept: application/json
+
+### Adicionar Tarefa
+POST {{Tarefas_HostAddress}}/api/tarefa
+Accept: application/json
+Content-Type: application/json
+
+{
+  "titulo": "Tarefa 5",
+  "descricao": "Descrição da tarefa 5",
+  "status": "Pendente"
+}
+
+### Modificar Tarefa
+PATCH {{Tarefas_HostAddress}}/api/tarefa/2
+Accept: application/json
+Content-Type: application/json
+
+{
+  "descricao": "Nova descrição da tarefa 2"
+}
+
+### Deletar Tarefa
+DELETE {{Tarefas_HostAddress}}/api/tarefa/7
+Accept: application/json
+
+### Modificar Status da Tarefa
+PATCH {{Tarefas_HostAddress}}/api/tarefa/1/status
+Accept: application/json
+Content-Type: application/json
+
+{
+  "status": "Concluído"
+}
+
+### Adicionar Pessoa a Tarefa
+POST {{Tarefas_HostAddress}}/api/tarefa/responsavel
+Accept: application/json
+Content-Type: application/json
+
+{
+  "tarefaId": 3,
+  "pessoaId": 3
+}
+
+### Remover Pessoa da Tarefa
+DELETE {{Tarefas_HostAddress}}/api/tarefa/responsavel
+Accept: application/json
+Content-Type: application/json
+
+{
+  "tarefaId": 3,
+  "pessoaId": 4
+}
+
+
+#################################
+
+
+### Listar Pessoas
+GET {{Tarefas_HostAddress}}/api/pessoa
+Accept: application/json
+
+### Listar uma Pessoa
+GET {{Tarefas_HostAddress}}/api/pessoa/3
+Accept: application/json
+
+### Adicionar Pessoa
+POST {{Tarefas_HostAddress}}/api/pessoa
+Accept: application/json
+Content-Type: application/json
+
+{
+  "nome": "Maria Eduarda Mendes"
+}
+
+### Modificar Pessoa
+PUT {{Tarefas_HostAddress}}/api/pessoa/4
+Accept: application/json
+Content-Type: application/json
+
+{
+  "nome": "Jessica Peixoto de Souza Armando"
+}
+
+### Deletar Pessoa
+DELETE {{Tarefas_HostAddress}}/api/pessoa/6
+Accept: application/json
